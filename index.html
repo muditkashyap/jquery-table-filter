@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Searchbar</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <center><input type="text" style="margin:15px;width:80%;padding:15px;" placeholder="Search Here" id="searchBar"></center>
+        <table border="1" cellspacing="0" cellpadding="10px" width="80%" align="center" id="dataTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Father's Name</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Aman</td>
+                    <td>Rohit</td>
+                    <td>aman@domainName.com</td>
+                </tr>
+                <tr>
+                    <td>Pankaj</td>
+                    <td>Pappu</td>
+                    <td>pankaj@domainName.com</td>
+                </tr>
+                <tr>
+                    <td>Sonu</td>
+                    <td>Vishl</td>
+                    <td>sonun@domainName.com</td>
+                </tr>
+                <tr>
+                    <td>Chandan</td>
+                    <td>Shivam</td>
+                    <td>chandan@domainName.com</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script>
+            
+            $('#searchBar').keyup(function(){
+                var value = this.value;
+                $("#dataTable tbody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        </script>
+
+    </body>
+</html>
